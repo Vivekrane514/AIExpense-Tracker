@@ -1,0 +1,1 @@
+- [x] Update Recent Transactions card to show maximum 8 transactions by changing slice(0, 5) to slice(0, 8) in app/(main)/dashboard/_components/transaction-overview.jsx and update comment to "last 8"

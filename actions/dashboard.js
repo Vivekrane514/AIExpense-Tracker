@@ -76,7 +76,7 @@ export async function getAIInsights(accountId) {
 
   try {
     // Call Gemini API to get AI insights
-    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+    const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
     const result = await model.generateContent(prompt);
     const response = await result.response;
     const advice = response.text() || "No insights available.";

@@ -156,7 +156,7 @@ function calculateNextRecurringDate(startDate, interval) {
 
 export async function scanReceipt(file) {
     try {
-         const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+         const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
 
     // Convert File to ArrayBuffer
     const arrayBuffer = await file.arrayBuffer();
@@ -230,8 +230,9 @@ export async function scanReceipt(file) {
       throw new Error("Invalid response format from Gemini");
     }
   } catch (error) {
-    console.error("Error scanning receipt:", error.message);
-    throw new Error("Failed to scan receipt");
+    console.error("Error scanning receipt:", error);
+    console.error("Error details:", error.message);
+    throw new Error(`Failed to scan receipt: ${error.message}`);
   }
 }
 
